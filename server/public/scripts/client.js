@@ -1,44 +1,37 @@
 console.log('JS linked');
 
 
+
 $(document).ready(onReady);
+
+// $( document ).ready( onReady );
+
 
 function onReady() {
   console.log('in JQ, onReady');
+  $('#addTaskBtn').on('click', addTask);
 
 } // end onReady
 
 
 
+// function onReady(){
+//     getItems();
+//     $( '#addItemButton' ).on( 'click', addItem );
+//     $( '#inventoryOut' ).on( 'click', '.sellButton', sell );
+//     $( '#inventoryOut' ).on( 'click', '.togglePendingButton', togglePending );
+// }
 
 
 
+function addTask(event){
+  event.preventDefault(); //Stop page refresh
+  let taskObjToSend = {
+    task: $('#taskInput').val(),
+  }
+  console.log('in addTask. new task:', taskObjToSend);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $( document ).ready( onReady );
+}
 
 
 // function addItem( event ){
@@ -60,6 +53,31 @@ function onReady() {
 //         alert( 'error adding item:', err );
 //     })
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // function getItems(){
 //     $.ajax({

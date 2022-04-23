@@ -11,7 +11,10 @@
 * font family and size
 * text color & or background color of tasks to show whether or not they have been completed
 #### /Requirements
-* README
+## EXTRA
+* fill out github README
+* add description to task??
+
 
 <!-- pseudo-code what you want to do!! -->
 // blah blah blah
