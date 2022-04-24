@@ -6,9 +6,10 @@ $(document).ready(function(){
 
 function addClickHandlers() {
   $('#submitBtn').on('click', handleSubmit);
-
-  // TODO - Add code for edit & delete buttons
+  $(document).on('click', '.completeBtn', handleCompleteBtn);
+  // $(document).on('click', '.deleteBtn', handleDeleteBtn);
 }
+
 
 function handleSubmit() {
   console.log('Submit button clicked.');
@@ -54,15 +55,46 @@ function renderTasks(tasks) {
     let task = tasks[i];
       console.log('this is what happens when you log "task" in renderTasks', task);
     $('#tasksOut').append(`
-    <tr><td>${task.description}</td><td><button id="completeBtn">DONE!</button></td>
-    <td><button id="deleteBtn">Delete</button></td></tr>
+    <tr data-id=${task.id}><td>${task.description}</td><td><button class="completeBtn">DONE!</button></td>
+    <td><button class="deleteBtn">Delete</button></td></tr>
     `);
   }
 }
 
+function handleCompleteBtn(){
+  console.log('"DONE!" works, bruh.');
+  let taskToComplete = $(this).closest('tr').data('id');
+  // console.log(taskToComplete);
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks/${taskToComplete}`,
+    data: {complete: true}
+  }).then(function(response){
+    refreshTasks();
+  }).catch(function(error){
+    console.log(error);
+  })
+}
 
+// function updateSong() {
+//   console.log('update works! dolphin!!!')
+//   let songIdToUpdate = $(this).closest('tr').data('id');
+//   let currentRank = $(this).closest('tr').data('rank');
+//   let newRank = currentRank - 1;
+//   $.ajax({
+//     method: 'PUT',
+//     url: `/songs/${songIdToUpdate}`,
+//     data: { newRank: newRank }
+//   }).then(function(response) {
+//     getSongs();
+//   }).catch(function(error) {
+//     console.log(error);
+//   })
+// }
 
+// function handleDeleteBtn(){
 
+// }
 
 
 
