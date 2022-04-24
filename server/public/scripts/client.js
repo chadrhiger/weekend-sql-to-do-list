@@ -9,7 +9,7 @@ function addClickHandlers() {
   $('#submitBtn').on('click', handleSubmit);
   $(document).on('click', '#completeBtn', handleCompleteBtn);
   $(document).on('click', '#deleteBtn', handleDeleteBtn);
-} // end
+} // end addClickHandlers
 
 // Responds to SUBMIT click by creating new object that includes the value entered into taskInput
 function handleSubmit() {
@@ -17,16 +17,16 @@ function handleSubmit() {
   let newTask = {
     description: $('#taskInput').val()
   };
-  let empt = $('#taskInput').val();
-  if (empt === ""){
-    alert("please enter a task");
+  let emptyInput = $('#taskInput').val();
+  if (emptyInput === "") {
+    alert("Bummer, ya gotta add a task");
     return false;
   }
   else {
     addTask(newTask);
   }
-  
-} // end
+
+} // end handleSubmit
 
 // Adds a task to the database
 function addTask(taskToAdd) {
@@ -42,7 +42,7 @@ function addTask(taskToAdd) {
     console.log('Error in POST', error)
     alert('Cannot add Task, please try later.');
   });
-} // end
+} // end addTask
 
 // refreshTasks will get all tasks from the server and render to page
 function refreshTasks() {
@@ -55,7 +55,7 @@ function refreshTasks() {
   }).catch(function (error) {
     console.log('error in GET', error);
   });
-} // end
+} // end refreshTasks
 
 
 // Displays an array of tasks to the DOM
@@ -68,16 +68,16 @@ function renderTasks(tasks) {
       $('#tasksOut').append(`
     <tr class="item" data-id=${task.id}>
       <td>${task.description}</td>
-      <td><button id="completeBtn">Done?</button></td>
-      <td><button id="deleteBtn">Delete</button></td>
+      <td><button class="btn" id="completeBtn">Done?</button></td>
+      <td><button class="deleteBtn" id="deleteBtn">Delete</button></td>
     </tr>
     `);
     }
     else {
       $('#tasksOut').append(`
-      <tr class="item" data-id=${task.id}><td>${task.description}</td>
-        <td><button class="doneness" id="completeBtn">DONE!</button></td>
-        <td><button id="deleteBtn">Delete</button></td>
+      <tr class="grid-item" data-id=${task.id}><td>${task.description}</td>
+        <td><button class="doneBtn" id="completeBtn">✔</button></td>
+        <td><button class="button" id="deleteBtn">Delete</button></td>
       </tr>
       `);
     }

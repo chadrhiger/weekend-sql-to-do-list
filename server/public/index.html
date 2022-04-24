@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,36 +10,31 @@
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
-<body id="bodyTag">
+
+<body class="bodyTag">
   <header id="titleHeader">
-    <h1>To Do</h1>
-    <p>maybe some bs about the app</p>
+    <h1>Oh, The Things You'll Do</h1>
+    <p>(your mom's right; you have a lot of potential)</p>
   </header>
   <main>
-    <div id="inputNbtn">
-    <input type="text" id="taskInput" placeholder="Write Task"> <button id="submitBtn">Add Task!</button>
+    <div class="inputLine" id="inputNbtn">
+      <input type="text" id="taskInput" placeholder="Write Task"> <button class="button" id="submitBtn">Add
+        Task!</button>
     </div>
     <table id="outputDiv">
       <thead>
         <tr>
           <th>Tasks</th>
+          <th>Done?</th>
+          <th>Delete?</th>
         </tr>
       </thead>
-
       <tbody class="container" id="tasksOut"></tbody>
-        
-<!-- append unordered list here. this content is a template DO NOT USE THIS CODE HERE -->
-<!-- <li id="appendedTask" ></li><button id="completeBtn">DONE!</button><button id="deleteBtn">Delete</button> -->
-
-      
-      </table>
-    
-
-
+    </table>
   </main>
-  <footer>
+  <!-- <footer>
     <h3>some bs at the bottom cuz why not</h3>
-  </footer>
-  
+  </footer>   -->
 </body>
+
 </html>

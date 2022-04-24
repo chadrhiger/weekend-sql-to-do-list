@@ -10,6 +10,31 @@ INSERT INTO "tasks"
 
 SELECT * FROM "tasks"
 
+`INSERT INTO "tasks" ("description")
+                   VALUES ($1);`;
+
+                   CREATE TABLE "tasks" (
+	"id" SERIAL PRIMARY KEY,
+	"task" VARCHAR (250) NOT NULL,
+  "isDone" BOOLEAN DEFAULT FALSE
+);
+
+INSERT INTO "tasks" 
+	("id", "description", "complete");
+	
+SELECT * FROM "tasks";	
+
+DELETE FROM "tasks" WHERE id=8;
+
+
+UPDATE "tasks"
+      SET "complete"=true
+      WHERE "id"=3;
+
+
+	
+
+
 
 
 
