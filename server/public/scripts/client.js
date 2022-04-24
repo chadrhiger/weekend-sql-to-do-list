@@ -50,13 +50,12 @@ function refreshTasks() {
 // Displays an array of tasks to the DOM
 function renderTasks(tasks) {
   $('#tasksOut').empty();
-
   for(let i = 0; i < tasks.length; i += 1) {
     let task = tasks[i];
-    // For each task, append a new task to <li>
+      console.log('this is what happens when you log "task" in renderTasks', task);
     $('#tasksOut').append(`
       <tr>
-        <td>${task}</td>
+        <td>${task.task}</td>
       </tr>
     `);
   }
