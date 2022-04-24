@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 function addClickHandlers() {
   $('#submitBtn').on('click', handleSubmit);
-  // $(document).on('click', '.completeBtn', handleCompleteBtn);
+  $(document).on('click', '.completeBtn', handleCompleteBtn);
   $(document).on('click', '.deleteBtn', handleDeleteBtn);
 }
 
@@ -21,6 +21,7 @@ function handleSubmit() {
 
 // adds a book to the database
 function addTask(taskToAdd) {
+  $('#taskInput').val('');
   $.ajax({
     type: 'POST',
     url: '/tasks',
@@ -61,20 +62,21 @@ function renderTasks(tasks) {
   }
 }
 
-// function handleCompleteBtn(){
-//   console.log('"DONE!" clicks, bruh.');
-//   let taskToComplete = $(this).closest('tr').data('id');
-//   console.log(taskToComplete);
-//   $.ajax({
-//     method: 'PUT',
-//     url: `/tasks/${taskToComplete}`,
-//     data: {complete: true}
-//   }).then(function(response){
-//     refreshTasks();
-//   }).catch(function(error){
-//     console.log(error);
-//   })
-// }
+function handleCompleteBtn(){
+  console.log('"DONE!" clicks, bruh.');
+  let taskToComplete = $(this).closest('tr').data('id');
+  console.log(taskToComplete);
+  $.ajax({
+    method: 'PUT',
+    url: `/tasks/${taskToComplete}`,
+    data: {complete: true}
+  }).then(function(response){
+    refreshTasks();
+    // if ()
+  }).catch(function(error){
+    console.log(error);
+  })
+}
 
 function handleDeleteBtn(){
   console.log('handleDeleteBtn is clicked');

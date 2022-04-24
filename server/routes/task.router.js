@@ -35,25 +35,25 @@ router.post('/',  (req, res) => {
 });
 
 
-// router.put('/:taskId', (req, res) => {
-//   let sqlQuery = `
-//     UPDATE "tasks"
-//       SET "complete"=true
-//       WHERE "id"=$1;
-//   `;
-//   let sqlValues = [
-//     req.body.newTask,
-//     req.params.taskId
-//   ]
-//   pool.query(sqlQuery, sqlValues)
-//     .then((dbResult) => {
-//       res.sendStatus(200);
-//     })
-//     .catch((dbError) => {
-//       console.log('error in PUT /tasks db request:');
-//       res.sendStatus(500);
-//     })
-// })
+router.put('/:taskId', (req, res) => {
+  let sqlQuery = `
+    UPDATE "tasks"
+      SET "complete"=true
+      WHERE "id"=$1;
+  `;
+  let sqlValues = [
+    req.body.newTask,
+    req.params.taskId
+  ]
+  pool.query(sqlQuery, sqlValues)
+    .then((dbResult) => {
+      res.sendStatus(200);
+    })
+    .catch((dbError) => {
+      console.log('error in PUT /tasks db request:');
+      res.sendStatus(500);
+    })
+})
 
 router.delete('/:taskId', (req, res) => {
   // We can access the value that was supplied
