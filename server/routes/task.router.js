@@ -35,14 +35,16 @@ router.post('/',  (req, res) => {
 });
 
 
+
 router.put('/:taskId', (req, res) => {
+  console.log("PUT (complete) in router is tickled.");
   let sqlQuery = `
     UPDATE "tasks"
       SET "complete"=true
       WHERE "id"=$1;
   `;
   let sqlValues = [
-    req.body.newTask,
+    // req.body.newTask,
     req.params.taskId
   ]
   pool.query(sqlQuery, sqlValues)

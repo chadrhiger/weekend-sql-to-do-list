@@ -3,8 +3,35 @@
   background-color: azure;
 }
 
+.doneness{
+  background-color: red;
+}
+/* 
 .container {
   display: grid;
   align-content: space-between;
+  background-color: blueviolet;
+  padding: 10px;
+  border-radius: 10px;
   border: 2px, black;
-}
+}  */
+
+/* .container {
+  display: grid;
+  grid-template-columns: 500px;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+ 
+  background-color: blueviolet;
+  /* padding: 10px; */
+  /* border-radius: 50px;
+}  */
+/* .item {
+  background-color: #80cbc4;
+  border: 3px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 50px;
+
+} */
