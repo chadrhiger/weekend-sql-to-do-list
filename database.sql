@@ -8,7 +8,7 @@ INSERT INTO "tasks"
 	("id", "description", "isDone") 
 
 
-SELECT * FROM "tasks";
+SELECT * FROM "tasks"
 
 
 

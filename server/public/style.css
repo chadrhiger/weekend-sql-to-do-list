@@ -1,4 +1,10 @@
 #bodyTag {
-  background-color: azure;
 
+  background-color: azure;
+}
+
+.container {
+  display: grid;
+  align-content: space-between;
+  border: 2px, black;
 }
