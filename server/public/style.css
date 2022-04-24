@@ -3,8 +3,11 @@
   background-color: azure;
 }
 
+.button:hover {background-color:aliceblue}
+
+
 .doneness{
-  background-color: red;
+  background-color: rgb(47, 148, 16);
 }
 /* 
 .container {
@@ -28,7 +31,7 @@
 }  */
 /* .item {
   background-color: #80cbc4;
-  border: 3px solid black;
+  border: 6px solid black;
   padding: 20px;
   font-size: 30px;
   text-align: center;

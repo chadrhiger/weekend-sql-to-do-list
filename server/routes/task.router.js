@@ -10,15 +10,14 @@ router.get('/', (req, res) => {
     // Sends back the results in an object
     res.send(result.rows);
   })
-  .catch(error => {
-    console.log('error getting tasks', error);
-    res.sendStatus(500);
-  });
+    .catch(error => {
+      console.log('error getting tasks', error);
+      res.sendStatus(500);
+    });
 });
 
-// Adds a new book to the list of awesome reads
-// Request body must be a book object with a title and author.
-router.post('/',  (req, res) => {
+// Adds a new task to the To Do List
+router.post('/', (req, res) => {
   let newTask = req.body;
   console.log(`Adding task`, newTask);
 
@@ -34,8 +33,7 @@ router.post('/',  (req, res) => {
     });
 });
 
-
-
+// Sets task to "done" by changing bool from static false to TRUE
 router.put('/:taskId', (req, res) => {
   console.log("PUT (complete) in router is tickled.");
   let sqlQuery = `
@@ -57,9 +55,8 @@ router.put('/:taskId', (req, res) => {
     })
 })
 
+// Deletes task from database
 router.delete('/:taskId', (req, res) => {
-  // We can access the value that was supplied
-  // to this route parameter by:
   let taskToDelete = req.params.taskId;
   let sqlQuery = `
     DELETE FROM "tasks"
