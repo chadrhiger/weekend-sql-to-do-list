@@ -13,7 +13,7 @@ function addClickHandlers() {
 function handleSubmit() {
   console.log('Submit button clicked.');
   let task = {
-    task: $('#taskInput').val()
+    description: $('#taskInput').val()
 };
   addTask(task);
 }
@@ -54,9 +54,8 @@ function renderTasks(tasks) {
     let task = tasks[i];
       console.log('this is what happens when you log "task" in renderTasks', task);
     $('#tasksOut').append(`
-      <tr>
-        <td>${task.task}</td>
-      </tr>
+    <tr><td>${task.description}</td><td><button id="completeBtn">DONE!</button></td>
+    <td><button id="deleteBtn">Delete</button></td></tr>
     `);
   }
 }
